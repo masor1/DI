@@ -24,7 +24,6 @@ class Component {
     }
 
     fun inject(activity: Activity) {
-        activity.computer = getComputer()
-        activity.keyboard = KeyBoard()
+        activity.keyboardInject = KeyBoard()
     }
 }

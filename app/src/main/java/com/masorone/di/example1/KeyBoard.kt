@@ -1,4 +1,6 @@
 package com.masorone.di.example1
 
-class KeyBoard {
+import javax.inject.Inject
+
+class KeyBoard @Inject constructor() {
 }
