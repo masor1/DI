@@ -1,8 +1,6 @@
 package com.masorone.di.example1
 
-import javax.inject.Inject
-
-class Computer @Inject constructor(
+class Computer(
     private val monitor: Monitor,
     private val computerTower: ComputerTower,
     private val keyBoard: KeyBoard,
