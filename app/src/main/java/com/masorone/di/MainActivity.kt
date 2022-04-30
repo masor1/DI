@@ -11,8 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         val activity = Activity()
 
-        activity.keyboardInject.toString()
-        activity.mouseInject.toString()
-        activity.monitorInject.toString()
+        activity.computer.toString()
     }
 }

@@ -1,4 +1,6 @@
 package com.masorone.di.example1
 
-class Memory {
+import javax.inject.Inject
+
+class Memory @Inject constructor() {
 }
