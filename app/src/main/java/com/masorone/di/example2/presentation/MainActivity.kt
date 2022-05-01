@@ -1,10 +1,10 @@
 package com.masorone.di.example2.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.masorone.di.R
+import com.masorone.di.example2.di.ContextModule
 import com.masorone.di.example2.di.DaggerAppComponent
-import com.masorone.di.example2.di.DataModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private val appComponent by lazy {
         DaggerAppComponent.builder()
-            .dataModule(DataModule(this))
+            .contextModule(ContextModule(application))
             .build()
     }
 
