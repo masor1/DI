@@ -1,11 +1,15 @@
 package com.masorone.di.example2.data.database
 
+import android.content.Context
 import android.util.Log
+import com.masorone.di.R
 import javax.inject.Inject
 
-class ExampleDatabase @Inject constructor() {
+class ExampleDatabase @Inject constructor(
+    private val context: Context
+) {
 
     fun method() {
-        Log.d("EXAMPLE_TEST", "ExampleDatabase")
+        Log.d("EXAMPLE_TEST", "ExampleDatabase ${context.getString(R.string.app_name)}")
     }
 }

@@ -4,10 +4,11 @@ import com.masorone.di.example2.data.repository.ExampleRepositoryImpl
 import com.masorone.di.example2.domain.ExampleRepository
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-interface DomainModule {
+class DomainModule {
 
-    @Binds
-    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository
+    @Provides
+    fun bindRepository(impl: ExampleRepositoryImpl): ExampleRepository = impl
 }

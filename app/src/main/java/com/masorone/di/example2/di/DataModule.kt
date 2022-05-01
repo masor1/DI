@@ -1,5 +1,6 @@
 package com.masorone.di.example2.di
 
+import android.content.Context
 import com.masorone.di.example2.data.datasource.ExampleLocalDataSource
 import com.masorone.di.example2.data.datasource.ExampleLocalDataSourceImpl
 import com.masorone.di.example2.data.datasource.ExampleRemoteDataSource
@@ -9,11 +10,16 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-interface DataModule {
+class DataModule(
+    private val context: Context
+) {
 
-    @Binds
-    fun bindLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
+    @Provides
+    fun provideContext() = context
 
-    @Binds
-    fun bindRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+    @Provides
+    fun bindLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource = impl
+
+    @Provides
+    fun bindRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource = impl
 }
