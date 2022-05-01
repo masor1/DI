@@ -1,0 +1,23 @@
+package com.masorone.di.example2.presentation
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.masorone.di.R
+import com.masorone.di.example2.di.DaggerAppComponent
+import javax.inject.Inject
+
+class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var viewModel: ExampleViewModel
+
+    private val appComponent = DaggerAppComponent.create()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        appComponent.inject(this)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        viewModel.method()
+    }
+}
