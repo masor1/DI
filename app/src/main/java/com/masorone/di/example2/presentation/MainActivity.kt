@@ -3,7 +3,6 @@ package com.masorone.di.example2.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.masorone.di.R
-import com.masorone.di.example2.di.ContextModule
 import com.masorone.di.example2.di.DaggerAppComponent
 import javax.inject.Inject
 
@@ -14,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private val appComponent by lazy {
         DaggerAppComponent.builder()
-            .contextModule(ContextModule(application))
+            .context(application)
             .build()
     }
 
