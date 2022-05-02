@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     private val appComponent by lazy {
         DaggerAppComponent.builder()
+            .currentTime(System.currentTimeMillis())
             .context(application)
             .build()
     }
